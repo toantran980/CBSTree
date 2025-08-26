@@ -57,7 +57,7 @@ Some possible applications of the CBSTree in this project include:
 
 ### 1. **Data Storage and Retrieval**
 
-The CBSTree can be used to store and retrieve integers in an efficient manner. The tree can be used to store a large dataset of integers, and the CBSTree's compressed structure allows for fast search, insertion, and deletion operations.
+The CBSTree can be used to store and retrieve integers in an efficient manner. The tree can be used to store a large dataset, and the CBSTree's compressed structure allows for fast search, insertion, and deletion operations.
 
 ### 2. **Sorting and Searching**
 
