@@ -51,7 +51,7 @@ g++ -o cbstree main.cpp cbstree.cpp
 
 # **Applications of CBSTree in this Project**
 
-Based on the provided codebase, it appears that the CBSTree data structure is being used to manage a binary search tree of integers. The tree is implemented using a compressed binary search tree (CBST) data structure, which allows for efficient storage and retrieval of data.
+The CBSTree data structure is being used to manage a binary search tree of integers. The tree is implemented using a compressed binary search tree (CBST) data structure, which allows for efficient storage and retrieval of data.
 
 Some possible applications of the CBSTree in this project include:
 
