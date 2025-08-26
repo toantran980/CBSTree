@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\jokeh\Source\Repos\CBSTree\CBSTree\main.cpp(150,14): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\jokeh\Source\Repos\CBSTree\CBSTree\main.cpp(158,14): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\jokeh\Source\Repos\CBSTree\CBSTree\main.cpp(204,14): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\jokeh\Source\Repos\CBSTree\CBSTree\main.cpp(212,14): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
