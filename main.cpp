@@ -9,7 +9,7 @@
 #include    <cstdlib>
 
 #include    "cbstree.hpp"
-#include    "cbstree.cpp"
+#include    "cbstree_V2.cpp"
 
 using namespace std;
 
@@ -32,8 +32,7 @@ void    PrintInt(const int& intRef);
 //
 // ============================================================================
 
-int     main()
-{
+int     main() {
     bool                bLoop = true;
     CBSTree<int>        myIntTree;
     char                buf[BUFLEN];
@@ -46,8 +45,7 @@ int     main()
         DisplayMenu();
         cout << "Please enter a selection: ";
         cin.getline(buf, BUFLEN);
-        switch (toupper(*buf))
-        {
+        switch (toupper(*buf)) {
             // add random values to the tree
         case 'A':
             AddRandomInts(myIntTree);
@@ -65,12 +63,9 @@ int     main()
             // display the tree
         case 'D':
             myIntTree.GetTreeInfo(numNodes, height);
-            if (0 == numNodes)
-            {
+            if (0 == numNodes) {
                 cout << "The tree is currently empty..." << endl;
-            }
-            else
-            {
+            } else {
                 DisplayTree(myIntTree);
             }
             break;
@@ -99,8 +94,7 @@ int     main()
                 << " released"
                 << endl;
 
-            if ('Q' == toupper(*buf))
-            {
+            if ('Q' == toupper(*buf)) {
                 cout << "Bye!" << endl;
                 bLoop = false;
             }
@@ -134,8 +128,7 @@ int     main()
 //
 // ============================================================================
 
-void    AddRandomInts(CBSTree<int>& tree)
-{
+void    AddRandomInts(CBSTree<int>& tree) {
     int         intVal;
     int         numInts;
     int         maxVal;
@@ -147,26 +140,22 @@ void    AddRandomInts(CBSTree<int>& tree)
     // get some information from the user...
     cout << "How many random integers would you like to insert? ";
     cin.getline(buf, BUFLEN); // may cause memory leaks
-    if (1 != sscanf(buf, "%d", &numInts))
-    {
+    if (1 != sscanf(buf, "%d", &numInts)) {
         cout << "Sorry, bogus input..." << endl;
         return;
     }
 
     cout << "Enter the upper bound for values: ";
     cin.getline(buf, BUFLEN);
-    if (1 != sscanf(buf, "%d", &maxVal))
-    {
+    if (1 != sscanf(buf, "%d", &maxVal)) {
         cout << "Sorry, bogus input..." << endl;
         return;
     }
 
     // populate the tree with random values
-    for (; numInts > 0; --numInts)
-    {
+    for (; numInts > 0; --numInts) {
         intVal = rand() % (maxVal + 1);
-        if (false == tree.InsertItem(intVal))
-        {
+        if (false == tree.InsertItem(intVal)) {
 #ifdef  SHOW_INSERT
             cout << "  " << intVal << " is already in the tree..." << endl;
 #endif  // SHOW_INSERT
@@ -193,34 +182,29 @@ void    AddRandomInts(CBSTree<int>& tree)
 //
 // ============================================================================
 
-void    AddSequentialInts(CBSTree<int>& tree)
-{
+void    AddSequentialInts(CBSTree<int>& tree) {
     int         lower;
     int         upper;
     char        buf[BUFLEN];
 
     cout << "Enter the lower bound of the sequence: ";
     cin.getline(buf, BUFLEN);
-    if (1 != sscanf(buf, "%d", &lower))
-    {
+    if (1 != sscanf(buf, "%d", &lower)) {
         cout << "Sorry, bogus input..." << endl;
         return;
     }
 
     cout << "Enter the upper bound of the sequence: ";
     cin.getline(buf, BUFLEN);
-    if (1 != sscanf(buf, "%d", &upper))
-    {
+    if (1 != sscanf(buf, "%d", &upper)) {
         cout << "Sorry, bogus input..." << endl;
         return;
     }
 
 
     // populate the tree with random values
-    for (; lower <= upper; ++lower)
-    {
-        if (false == tree.InsertItem(lower))
-        {
+    for (; lower <= upper; ++lower) {
+        if (false == tree.InsertItem(lower)) {
 #ifdef  SHOW_INSERT
             cout << "  " << lower << " is already in the tree..." << endl;
 #endif  // SHOW_INSERT
@@ -238,8 +222,7 @@ void    AddSequentialInts(CBSTree<int>& tree)
 //
 // ============================================================================
 
-void    BalanceTree(CBSTree<int>& tree)
-{
+void    BalanceTree(CBSTree<int>& tree) {
     cout << "BalanceTree called..." << endl;
     tree.RebalanceTree();
 
@@ -256,8 +239,7 @@ void    BalanceTree(CBSTree<int>& tree)
 //
 // ============================================================================
 
-void    DisplayMenu()
-{
+void    DisplayMenu() {
     cout << "\nD)isplay the tree\n";
     cout << "A)dd random values to the tree\n";
     cout << "B)alance the tree\n";
@@ -292,8 +274,7 @@ void    DisplayTree(const CBSTree<int>& tree)
     cout << "Please enter the traversal type: ";
     cin.getline(buf, BUFLEN);
 
-    switch (*buf - '0')
-    {
+    switch (*buf - '0') {
     case  1:
         tree.PreOrderTraverse(PrintInt);
         break;
@@ -330,8 +311,7 @@ void    DisplayTree(const CBSTree<int>& tree)
 //
 // ============================================================================
 
-void    PrintInt(const int& intRef)
-{
+void    PrintInt(const int& intRef) {
     cout << intRef << '\t';
 
 }  // end of "PrintInt"

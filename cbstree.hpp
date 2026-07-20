@@ -11,8 +11,7 @@
 
 // class declaration
 template    <typename  NodeType>
-class   CBSTree
-{
+class   CBSTree {
 public:
     // constructors and destructor
     CBSTree() : m_root(NULL) {}
@@ -69,5 +68,5 @@ private:
     CTreeNode<NodeType>* m_root;
 };
 
-//#include    "cbstree.cpp"
+//#include    "cbstree_V2.cpp"
 #endif  // CBIN_SEARCH_TREE_HEADER

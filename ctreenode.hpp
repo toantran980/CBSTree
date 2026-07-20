@@ -10,8 +10,7 @@
 using namespace std;
 
 template    <typename NodeValueType>
-class   CTreeNode
-{
+class   CTreeNode {
 public:
     // constructor
     CTreeNode() : m_left(NULL), m_right(NULL) {}
