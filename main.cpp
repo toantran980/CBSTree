@@ -8,10 +8,11 @@
 #include    <iostream>
 #include    <cstdlib>
 
-#include    "cbstree.hpp"
-#include    "cbstree_V2.cpp"
+#include    "cbstreeV2.hpp"
+#include    "cbstreeV2.cpp"
 
 using namespace std;
+
 
 // define to show duplicate insertions
 #define SHOW_INSERT
@@ -20,11 +21,11 @@ using namespace std;
 const   int         BUFLEN = 256;
 
 // function prototypes
-void    AddRandomInts(CBSTree<int>& tree);
-void    AddSequentialInts(CBSTree<int>& tree);
-void    BalanceTree(CBSTree<int>& tree);
+void    AddRandomInts(CBSTreeV2<int>& tree);
+void    AddSequentialInts(CBSTreeV2<int>& tree);
+void    BalanceTree(CBSTreeV2<int>& tree);
 void    DisplayMenu();
-void    DisplayTree(const CBSTree<int>& tree);
+void    DisplayTree(const CBSTreeV2<int>& tree);
 void    PrintInt(const int& intRef);
 
 
@@ -34,7 +35,7 @@ void    PrintInt(const int& intRef);
 
 int     main() {
     bool                bLoop = true;
-    CBSTree<int>        myIntTree;
+    CBSTreeV2<int>        myIntTree;
     char                buf[BUFLEN];
     int                 height;
     int                 numNodes;
@@ -128,7 +129,7 @@ int     main() {
 //
 // ============================================================================
 
-void    AddRandomInts(CBSTree<int>& tree) {
+void    AddRandomInts(CBSTreeV2<int>& tree) {
     int         intVal;
     int         numInts;
     int         maxVal;
@@ -182,7 +183,7 @@ void    AddRandomInts(CBSTree<int>& tree) {
 //
 // ============================================================================
 
-void    AddSequentialInts(CBSTree<int>& tree) {
+void    AddSequentialInts(CBSTreeV2<int>& tree) {
     int         lower;
     int         upper;
     char        buf[BUFLEN];
@@ -222,7 +223,7 @@ void    AddSequentialInts(CBSTree<int>& tree) {
 //
 // ============================================================================
 
-void    BalanceTree(CBSTree<int>& tree) {
+void    BalanceTree(CBSTreeV2<int>& tree) {
     cout << "BalanceTree called..." << endl;
     tree.RebalanceTree();
 
@@ -266,7 +267,7 @@ void    DisplayMenu() {
 //      Nothing
 //
 // ============================================================================
-void    DisplayTree(const CBSTree<int>& tree)
+void    DisplayTree(const CBSTreeV2<int>& tree)
 {
     char        buf[BUFLEN];
 

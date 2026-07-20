@@ -1,69 +1,72 @@
-## **Introduction**
+## Introduction
 
-This is a C++ implementation of a Compressed Binary Search Tree (CBST) data structure. A CBST is a type of binary search tree that stores multiple values in each node, allowing for efficient storage and retrieval of data.
+This is a C++ implementation of a **Compressed Binary Search Tree (CBST)** data structure. A CBST is a type of binary search tree that stores values in nodes while supporting efficient storage and retrieval.
 
-## **Overview**
+## Overview
 
-The CBSTree class is a template class that can store any type of data. It provides methods for inserting, deleting, and searching for values in the tree. The tree is self-balancing, meaning that it will automatically adjust its structure to maintain a balance between the height of the tree and the number of nodes.
+`CBSTree` is a **template class** that can store any type of data. It provides methods for:
+- inserting values
+- deleting values
+- searching for values
+- traversing the tree (preorder / inorder / postorder)
+- rebalancing the tree
 
-## **Files**
+The project includes a console driver (`main.cpp`) that exercises the tree with random or sequential integers and prints tree contents and statistics.
 
-* ```
-  main.cpp
-  ```
+## Files
 
-  : A test driver program that exercises the CBSTree class.
-* ```
-  cbstree.cpp
-  ```
+- `main.cpp`
+  - Test driver program that exercises `CBSTree<int>`.
+- `cbstree.hpp`
+  - Header file for the `CBSTree` class.
+- `cbstree.cpp`
+  - (Legacy) implementation of the `CBSTree` template.
+- `cbstree_V2.cpp`
+  - Current/alternate implementation (unique_ptr-based) intended for template usage in this repo.
+- `ctreenode.hpp`
+  - Defines `CTreeNode`, the node type used by `CBSTree`.
 
-  : The implementation of the CBSTree class.
-* ```
-  cbstree.hpp
-  ```
+## Usage
 
-  : The header file for the CBSTree class.
-* ```
-  ctreenode.hpp
-  ```
+To use `CBSTree`, include `cbstree.hpp` in your program and create an instance:
 
-  : The header file for the CTreeNode class, which represents a single node in the CBST.
+```cpp
+#include "cbstree.hpp"
 
-## **Usage**
-
-To use the CBSTree class, simply include the
-
+CBSTree<int> tree;
 ```
-cbstree.hpp
+
+Then you can call:
+- `tree.InsertItem(value)`
+- `tree.DeleteItem(value)`
+- `tree.ItemInTree(value)`
+- traversals: `tree.PreOrderTraverse(...)`, `tree.InOrderTraverse(...)`, `tree.PostOrderTraverse(...)`
+- `tree.RebalanceTree()`
+
+## Compiling and Running
+
+From the `CBSTree/CBSTree` folder:
+
+### Build
+
+```bat
+g++ -std=c++17 main.cpp -o cbstree_demo.exe
 ```
 
- header file in your program and create an instance of the class. You can then use the various methods provided by the class to insert, delete, and search for values in the tree.
+### Run
 
+```bat
+cbstree_demo.exe
+```
 
+## Applications of CBSTree in this Project
 
-## **Compiling and Running**
+1. **Data Storage and Retrieval**
+   - Store and retrieve integers efficiently using BST operations.
 
-To compile and run the program, use the following commands:
+2. **Sorting and Searching**
+   - Inorder traversal returns values in sorted order, useful for verifying BST properties.
 
-g++ -o cbstree main.cpp cbstree.cpp
-./cbstree
+3. **Balancing / Maintaining Performance**
+   - `RebalanceTree()` rebuilds the tree to improve height (especially after inserting ordered data).
 
-
-# **Applications of CBSTree in this Project**
-
-Based on the provided codebase, it appears that the CBSTree data structure is being used to manage a binary search tree of integers. The tree is implemented using a compressed binary search tree (CBST) data structure, which allows for efficient storage and retrieval of data.
-
-Some possible applications of the CBSTree in this project include:
-
-### 1. **Data Storage and Retrieval**
-
-The CBSTree can be used to store and retrieve integers in an efficient manner. The tree can be used to store a large dataset of integers, and the CBSTree's compressed structure allows for fast search, insertion, and deletion operations.
-
-### 2. **Sorting and Searching**
-
-The CBSTree can be used to sort and search a dataset of integers. The tree's compressed structure allows for fast search operations, making it suitable for applications where data needs to be quickly retrieved.
-
-
-### **3. Data Compression**
-
-The CBSTree can be used to compress a dataset of integers. The tree's compressed structure allows for efficient storage of data, making it suitable for applications where data needs to be stored in a compact form.
